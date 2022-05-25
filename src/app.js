@@ -4,7 +4,7 @@ const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 const app = express();
-const PORT = 7000;
+const PORT = process.env.PORT || 7000;
 
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, '../public')));
