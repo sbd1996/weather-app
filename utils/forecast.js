@@ -19,6 +19,7 @@ const forecast = (lat, long, callback) => {
         }
     };
     axios.request(options).then(function (response) {
+        console.log('It is going to be '+response.data.data[0].weather.description + ' and temprature will be '+ response.data.data[0].temp);
         callback(undefined, response.data.data[0])
     }).catch(function (error) {
         callback(error, undefined)
